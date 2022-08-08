@@ -24,32 +24,33 @@ class Mother(Family):
         return f'Mother: {self.syrname} {self.name} is {self.age} years'
 
 class Son(Father, Mother):
-    def __init__(self, syrname, name, age, father_name, mother_name):
-        super().__init__(syrname)
+    def __init__(self, syrname, name, age, father, mother):
+        Family.syrname = syrname
         self.name = name
         self.age = age
-        self.father_name = father_name
-        self.mother_name = mother_name
+        self.father = father
+        self.mother = mother
 
     def __str__(self):
-        return f'{self.syrname} {self.name}, my father is {self.father_name}, my mother is {self.mother_name}'
+        return f'{self.syrname} {self.name}, my father is {self.father}, my mother is {self.mother}'
 
 class Dougther(Father, Mother):
-    def __init__(self, syrname, name, age, father_name, mother_name):
-        super().__init__(syrname)
+    def __init__(self, syrname, name, age, father, mother):
+        Family.syrname = syrname
         self.name = name
         self.age = age
-        self.father_name = father_name
-        self.mother_name = mother_name
+        self.father = father
+        self.mother = mother
 
     def __str__(self):
-        return f'{self.syrname} {self.name}, my father is {self.father_name}, my mother is {self.mother_name}'
+        return f'{self.syrname} {self.name}, my father is {self.father}, my mother is {self.mother}'
 
 family = Family('Stantsel')
-father = Father('Stantsel', 'Dima', 30)
+father = Father(family.syrname, 'Dima', 30)
 print(father)
-mother = Mother('Stantsel', 'Diana', 28)
+mother = Mother(family.syrname, 'Diana', 28)
 print(mother)
-son = Son('Stantsel', 'Kirill', 1, 'Dima', 'Diana')
+son = Son(family.syrname, 'Kirill', 1, father.name, mother.name)
 print(son)
-doughter = Dougther('Stantsel', 'Alene', 5, 'Dima', 'Diana')
+doughter = Dougther(family.syrname, 'Alene', 5, father.name, mother.name)
+print(doughter.father)
