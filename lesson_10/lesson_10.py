@@ -25,7 +25,7 @@ class Mother(Family):
 
 class Son(Father, Mother):
     def __init__(self, syrname, name, age, father, mother):
-        Family.syrname = syrname
+        self.syrname = syrname
         self.name = name
         self.age = age
         self.father = father
@@ -36,7 +36,7 @@ class Son(Father, Mother):
 
 class Dougther(Father, Mother):
     def __init__(self, syrname, name, age, father, mother):
-        Family.syrname = syrname
+        self.syrname = syrname
         self.name = name
         self.age = age
         self.father = father
