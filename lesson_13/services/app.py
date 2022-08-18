@@ -1,5 +1,5 @@
 from annotation import HouseAnnotation, ConsumerAnnotation
-from generation import house_gener, consumer_gener
+from consts import house_gener, consumer_gener
 
 
 def get_recommendations(house_lst: list[HouseAnnotation], consumer: ConsumerAnnotation) -> dict[
