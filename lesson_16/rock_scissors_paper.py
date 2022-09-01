@@ -42,3 +42,4 @@ def gen_player_new():
 
 
 game(*gen_players())
+
